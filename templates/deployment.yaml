@@ -8,8 +8,6 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
-  minReplicas: 1
-  maxReplicas: 100
   selector:
     matchLabels:
       {{- include "canary.selectorLabels" . | nindent 6 }}
